@@ -1,0 +1,11 @@
+CREATE DATABASE chat_db;
+
+CREATE TABLE users (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nickname VARCHAR(50) NOT NULL DEFAULT '' UNIQUE,
+
+    password_hash VARCHAR(255) NOT NULL,    -- 用户密码的单向哈希 (Bcrypt)
+    role VARCHAR(10) NOT NULL DEFAULT 'user', -- enum `user` `admin`
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
