@@ -4,7 +4,7 @@ add_requires("drogon", { configs = { orm = true } })
 
 target("drogonChatServer")
 set_kind("binary")
-set_languages("c++17")
+set_languages("c++20")
 add_packages("drogon")
 add_includedirs("src")
 add_files("src/*.cc", "src/controller/*.cc")

@@ -1,6 +1,2 @@
-#include <iostream>
-
-int main(int argc, char **argv) {
-  std::cout << "hello world!" << std::endl;
-  return 0;
-}
+#include <drogon/drogon.h>
+int main(int argc, char **argv) { drogon::app().getDbClient(); }
