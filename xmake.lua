@@ -1,8 +1,13 @@
 add_rules("mode.debug", "mode.release")
 
+add_requires("drogon", { configs = { orm = true, postgresql = true } })
+
 target("drogonChatServer")
-    set_kind("binary")
-    add_files("src/*.cpp")
+set_kind("binary")
+set_language("c++17")
+add_packages("drogon")
+add_includedirs("src")
+add_files("src/*.cc", "src/controller/*.cc")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
@@ -72,4 +77,3 @@ target("drogonChatServer")
 --
 -- @endcode
 --
-
